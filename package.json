@@ -1,6 +1,6 @@
 {
-  "name": "create-react-app-redux",
-  "version": "0.1.0",
+  "name": "symphonics-chrome-ext",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -36,7 +36,6 @@
     "build": "NODE_ENV=production webpack -p",
     "watch": "webpack --watch"
   },
-  "homepage": "https://cra-redux-router-thunk.herokuapp.com",
   "lint-staged": {
     "*.{js,json,css,md}": [
       "prettier --write",
