@@ -1,24 +1,26 @@
-import BandJS from '../vendor/band.min.js'
 import React from 'react';
-import Tone from 'tone'
-import Transpose from '../transpose'
+import { bindActionCreators, compose } from 'redux';
+import { connect } from 'react-redux'
 
-const playTone = () => {
-    const music = new Transpose('Hello my name is Flumpy.')
-    music.composeAndPlay();
+import { playMusic } from '../modules/music'
 
-    console.log(music);
-}
+import Instructions from './components/instructions'
+import ComingSoon from './components/ComingSoon'
 
-const App = () => {
+const App = ({ playMusic }) => {
     return (
         <div>
-            <h1>Controls here</h1>
-            <button onClick={() => playTone()}>
-                test click
-            </button>
+            <Instructions />
+            <hr />
+            <ComingSoon />
         </div>
     )
 }
 
-export default App;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    playMusic,
+}, dispatch)
+
+export default compose(
+    connect(null, mapDispatchToProps)
+)(App)

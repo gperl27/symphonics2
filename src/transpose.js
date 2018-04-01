@@ -1,6 +1,6 @@
 /**
  * Turn an arbitrary amount of text into playable notes
- * Put the notes in a readable format as per tones.js libarary (https://tonejs.github.io/)
+ * Put the notes in a readable format as per Band.js libarary (https://github.com/meenie/band.js/)
  * 
  * @param word
  * @type string
@@ -57,7 +57,9 @@ export default class Transpose {
 
     chord(letters) {
         let chord = '';
-        letters.forEach(letter => chord += `${TEXT_TO_NOTE[letter]},`)
+        letters
+            .filter(letter => TEXT_TO_NOTE[letter] !== undefined)
+            .forEach(letter => chord += `${TEXT_TO_NOTE[letter]},`)
 
         return chord.replace(/,\s*$/, "");
     }
@@ -98,7 +100,9 @@ export default class Transpose {
         if (n <= 2) return 'half';
         if (n <= 4) return 'quarter';
         if (n <= 8) return 'eighth';
-        if (n <= 16) return 'sixtennth';
+        if (n <= 16) return 'sixteenth';
         if (n <= 32) return 'thirtySecond';
+
+        return 'quarter'
     }
 }

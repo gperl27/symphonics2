@@ -1,16 +1,16 @@
 import store from './store'
-
-console.log(store)
+import { setText, playMusic } from './modules/music';
 
 // we'll import an action creator here
 const playMusicFromText = word => {
     var query = word.selectionText;
 
-    console.log(word, 'play music')
+    store.dispatch(setText(query));
+    store.dispatch(playMusic())
 };
 
 chrome.contextMenus.create({
-    title: "Search in UrbanDictionary",
+    title: "Turn text into music",
     contexts: ["selection"],
     onclick: playMusicFromText
 });
