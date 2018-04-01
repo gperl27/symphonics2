@@ -1,6 +1,6 @@
 {
     "short_name": "Symphonics",
-    "name": "Turn any text into music",
+    "name": "Symphonics",
     "manifest_version": 2,
     "permissions": [
         "contextMenus",

@@ -7,7 +7,6 @@ const playMusicFromText = word => {
     var query = word.selectionText;
 
     console.log(word, 'play music')
-    // chrome.tabs.create({ url: "http://www.urbandictionary.com/define.php?term=" + query });
 };
 
 chrome.contextMenus.create({

@@ -1,7 +1,10 @@
-export const PLAY_MUSIC = 'PLAY_MUSIC'
+import transpose from '../transpose'
+
+export const UPDATE_NOTES = 'UPDATE_NOTES'
 
 const initialState = {
   text: null,
+  notes: [],
 };
 
 export default (state = initialState, action) => {
@@ -12,8 +15,11 @@ export default (state = initialState, action) => {
   }
 };
 
-export const playMusic = () => dispatch => {
+export const updateNotes = text => dispatch => {
+  const notes = transpose(text)
+
   dispatch({
-    type: PLAY_MUSIC
+    type: UPDATE_NOTES,
+    payload: notes,
   });
 };
