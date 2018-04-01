@@ -15,3 +15,6 @@ build
 npm-debug.log
 dist
 yarn*
+
+dist.crx
+dist.pem
