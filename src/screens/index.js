@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 
 import { playMusic } from '../modules/music'
 
-import Instructions from './components/instructions'
+import Instructions from './components/Instructions'
 import ComingSoon from './components/ComingSoon'
 
 const App = ({ playMusic }) => {
     return (
-        <div>
+        <div style={{ minWidth: '400px', padding: '0 25px' }}>
             <Instructions />
             <hr />
             <ComingSoon />
