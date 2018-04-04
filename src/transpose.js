@@ -14,7 +14,6 @@
  * n is the number of letters in a word
  * 3. If a word has punctuation return the measure as a chord
  */
-import Tone from 'tone'
 import BandJS from './vendor/band.min.js'
 import TEXT_TO_NOTE from './conversion'
 
